@@ -2,8 +2,13 @@
 #include<iostream>
 using namespace std;
 
+//Declaracion de las funciones
+void depositar(float);
+void retirar(float);
+void mostrarSaldo();
+
 //Funcion para mostrar el menu y ejecutar la opcion seleccionada
-void menu(){
+int main(){
     int opcion;
     do{
         cout <<"\n--- Cajero Automatico ---"<<endl;
@@ -15,24 +20,42 @@ void menu(){
 
         switch(opcion){
             case 1:
-                //depositar();
+                int valor;
+                cout<<"Ingrese el monto: "; cin>>valor;
+                depositar(valor);
+                cout<<valor;
                 break;
             case 2:
-                //retirar();
+                cout<<"Ingrese el monto: "; cin>>valor;
+                retirar(valor);
+                cout<<valor;
                 break;
             case 3:
-                //mostrarSaldo()
+                mostrarSaldo();
                 break;
             case 4:
                 cout<<"Saliendo..."<<endl;
+                system("pause");
                 break;
             default:
                 cout<<"Opcion no valida.Intente de nuevo."<<endl;
         }
     }while(opcion !=4);
+    return 0;
 }
 
-int main(){
-    menu();
-    return 0;
+//Codigo de las funciones
+
+void depositar(float monto){
+    double saldo;
+        saldo = saldo + monto;
+}
+void retirar(float monto){
+    double saldo;
+    saldo = saldo - monto;
+}
+
+void mostrarSaldo(){
+    double saldo;
+    cout<<"El saldo actual es: "<<saldo<<endl;
 }
