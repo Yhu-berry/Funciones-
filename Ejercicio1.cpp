@@ -7,8 +7,13 @@ void depositar(float);
 void retirar(float);
 void mostrarSaldo();
 
-//Funcion para mostrar el menu y ejecutar la opcion seleccionada
 int main(){
+    menu();
+    return 0;
+}
+
+//Funcion para mostrar el menu y ejecutar la opcion seleccionada
+void menu(){
     int opcion;
     do{
         cout <<"\n--- Cajero Automatico ---"<<endl;
@@ -41,21 +46,22 @@ int main(){
                 cout<<"Opcion no valida.Intente de nuevo."<<endl;
         }
     }while(opcion !=4);
-    return 0;
 }
 
-//Codigo de las funciones
+//Variable global para el saldo
+int saldo=0;
 
+//Funciones para depositar dinero
 void depositar(float monto){
-    double saldo;
-        saldo = saldo + monto;
+    saldo = saldo + monto;
 }
+
+//Funciones para retirar dinero
 void retirar(float monto){
-    double saldo;
     saldo = saldo - monto;
 }
 
+//Funcion para mostrar el saldo
 void mostrarSaldo(){
-    double saldo;
     cout<<"El saldo actual es: "<<saldo<<endl;
 }
