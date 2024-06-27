@@ -1,6 +1,7 @@
 //Hallar las raices de una ecuacion cuadratica
 #include <iostream>
 #include <cmath>
+#include <complex> //incluye el conjunto de los numeros complejos 
 using namespace std;
 
 int main(){
@@ -18,8 +19,13 @@ int main(){
         r2=(-b-sqrt(d))/(2*a);
         cout<<"r1: "<<r1<<endl;
         cout<<"r2: "<<r2<<endl;
-    }/*else{
+    }else{
         //raices complejas
-    }*/
+        complex<double> r1,r2;
+        r1=complex<double>(-b/(2*a),sqrt(-d)/(2*a));
+        r2=complex<double>(-b/(2*a),-sqrt(-d)/(2*a));
+        cout<<"r1: "<<r1<<endl;
+        cout<<"r2: "<<r2<<endl;
+    }
     return 0;
 }
