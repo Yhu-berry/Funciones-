@@ -33,9 +33,26 @@ int main(){
 
         cout<<"Tu jugada: " << opcionToString(opcionDel_Usuario)<<endl;
         cout<<"Jugada de la computadora: " << opcionToString(jugada_Computadora)<<endl;
+
+        //Reglas para hallar al ganador
+        if(opcionDel_Usuario==jugada_Computadora){
+        cout<<"Empate!"<< endl;
+
+        }else if(
+        (opcionDel_Usuario==2 &&jugada_Computadora==1)
+        || (opcionDel_Usuario==1 &&jugada_Computadora==3)
+        || (opcionDel_Usuario==3 &&jugada_Computadora==2)){
+        cout<<"Ganaste esta ronda!"<<endl;
+        juegosganUsuario++;
+        }else{
+        cout<<"Perdiste esta ronda, gano la computadora"<<endl;
+        juegosganComputadora++;
+        }
+        cout<<endl;
     }
 
-
+    cout<< ((juegosganUsuario==3)? "!Gaste el juego!": "La computadora gano el juego, suerte la proxima")<<endl;
+    
     return 0;
 }
 
